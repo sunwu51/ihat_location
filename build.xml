@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<project name="ihat_location" default="jar" basedir="."> 
+
+	<target name="compile">
+		<delete dir="target\classes"/>
+		<mkdir dir="target\classes"/>
+		<javac srcdir="src\main\java" destdir="target\classes" includeantruntime="on" encoding="UTF-8">
+			<classpath>
+				<fileset dir="lib" includes="*.jar"/>
+			</classpath>
+		</javac>
+	</target>
+	<target name="jar" depends="compile">
+		<delete file="target\Config.xml"/>
+		<copy file="Config.xml" tofile="target\Config.xml"/>
+		<jar destfile="target\ihat_project_from_ant.jar" basedir="target\classes">
+
+ 			<manifest>
+                <attribute name="Main-Class" value="ihat_location.ihat_project"/>
+            </manifest>
+            <zipfileset excludes="META-INF/*.MF" src="lib/dom4j-2.0.0.jar"/>  
+            <zipfileset excludes="META-INF/*.MF" src="lib/c3p0-0.9.2.jar"/>  
+            <zipfileset excludes="META-INF/*.MF" src="lib/gson-2.2.4.jar"/>  
+            <zipfileset excludes="META-INF/*.MF" src="lib/mchange-commons-java-0.2.3.3.jar"/>  
+            <zipfileset excludes="META-INF/*.MF" src="lib/mysql-connector-java-5.1.26.jar"/>  
+		</jar>
+	</target>
+</project>
