@@ -9,8 +9,10 @@ ihat_project.main<br>
 `mvn package`<br>
 或者<br>
 `ant`<br>
+或者<br>
+`gradle shadow`
 来生成jar包<br>
-jar包的位置在target目录下，注意jar包需和配置文件同级目录才可运行<br>
+jar包的位置在target目录下，如果是gradle生成的则在`build\lib`下.注意jar包需和配置文件同级目录才可运行<br>
 `java -jar ***.jar`<br>
 即可运行项目<br>
 ### 导入eclipse<br>
