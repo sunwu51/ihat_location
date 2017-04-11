@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <dbconnect>
+        <type>mysql</type>
+        <host>127.0.0.1</host>
+        <port>3306</port>
+        <dbname>ihat</dbname>
+        <username>root</username>
+        <password></password>
+    </dbconnect>
+	<server>
+	    <port>10005</port>
+	</server>
+	<wsserver>
+	    <host>127.0.0.1</host>
+	    <port>10004</port>
+	</wsserver>
+</root>

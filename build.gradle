@@ -1,0 +1,44 @@
+group 'bjtu'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+buildscript {
+  repositories {
+    maven {
+      url "http://maven.aliyun.com/nexus/content/groups/public"
+    }
+  }
+  dependencies {
+    classpath "com.github.jengelman.gradle.plugins:shadow:1.2.4"
+  }
+}
+
+apply plugin: "com.github.johnrengelman.shadow"
+
+sourceCompatibility = 1.8
+
+repositories {
+    maven{ url 'http://maven.aliyun.com/nexus/content/groups/public'}
+}
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+	compile(
+		'org.dom4j:dom4j:2.0.0',
+		'com.google.code.gson:gson:2.2.4',
+		'com.mchange:c3p0:0.9.2',
+		'mysql:mysql-connector-java:5.1.26'
+	)
+}
+ 
+tasks.withType(JavaCompile) {  
+    options.encoding = "UTF-8"  
+}
+task wrapper(type:Wrapper){
+	gradleVersion='3.3'
+}
+
+jar{
+	manifest{
+		attributes 'Main-Class':'ihat_location.ihat_project'
+	}
+}
