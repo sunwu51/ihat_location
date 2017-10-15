@@ -1,0 +1,53 @@
+{
+  "port": "10005",
+  "mqttbroker": "tcp:\/\/127.0.0.1:1883",
+  "mqtttopic": "location",
+  "map": {
+    "longitude": "360",
+    "latitude": "170",
+    "length": "9.000",
+    "width": "4.200"
+  },
+  "anchors": [
+    {
+      "anchorid": "1",
+      "mapid": "4",
+      "anchorname": "",
+      "anchorx": "180.000",
+      "anchory": "-85.000",
+      "anchorz": "0.000"
+    },
+    {
+      "anchorid": "2",
+      "mapid": "4",
+      "anchorname": "",
+      "anchorx": "-180.000",
+      "anchory": "-85.000",
+      "anchorz": "0.000"
+    },
+    {
+      "anchorid": "3",
+      "mapid": "4",
+      "anchorname": "",
+      "anchorx": "-180.000",
+      "anchory": "85.000",
+      "anchorz": "0.000"
+    },
+    {
+      "anchorid": "4",
+      "mapid": "4",
+      "anchorname": "",
+      "anchorx": "180.000",
+      "anchory": "85.000",
+      "anchorz": "0.000"
+    },
+    {
+      "anchorid": "5",
+      "mapid": "4",
+      "anchorname": "",
+      "anchorx": "180.000",
+      "anchory": "85.000",
+      "anchorz": "0.000"
+    }
+  ]
+}
