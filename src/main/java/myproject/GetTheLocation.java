@@ -1,6 +1,6 @@
 package myproject;
 
-public class getTheLocation {
+public class GetTheLocation {
     public static void main(String[] args) {
 //		double result[];
 //		result=getPos(5,0,-5,0,5,10,-3,5,1,1);	

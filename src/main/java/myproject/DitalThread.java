@@ -26,25 +26,25 @@ public class DitalThread implements Runnable {
                                 /*R包的处理：直接存储并对上一seq操作*/
     public void Rdeal(byte[] buf) {
         R r = new R(buf);
-        myproject.D("p", "r,seq" + r.SEQ + "aid" + r.AID + "cr" + r.CR + "ps" + r.PS);
+        Myproject.D("p", "r,seq" + r.SEQ + "aid" + r.AID + "cr" + r.CR + "ps" + r.PS);
         //System.out.println("AID"+r.AID);
 //		System.out.println("R"+"r,seq"+r.SEQ+"aid"+r.AID+"cr"+r.CR+"ps"+r.PS);
         int num = r.AID - 1;
         //aid-1变成数组序号；
-//		System.out.println(myproject.rs[num].size());
-        myproject.rs[num].add(r);
+//		System.out.println(Myproject.rs[num].size());
+        Myproject.rs[num].add(r);
 
-        if (myproject.rs[num].size() > 30) {
-            myproject.rs[num].remove(0);
+        if (Myproject.rs[num].size() > 30) {
+            Myproject.rs[num].remove(0);
         }
         try {
             //设置前一个的发送时间,设置完cs后检查
-            R prer = myproject.rs[num].stream().filter((itr) -> (itr.SEQ == (r.SEQ - 1 < 0 ? 255 : r.SEQ - 1))).findFirst().get();
+            R prer = Myproject.rs[num].stream().filter((itr) -> (itr.SEQ == (r.SEQ - 1 < 0 ? 255 : r.SEQ - 1))).findFirst().get();
             prer.CS = r.PS;
             prer.FLAG = true;
         } catch (Exception e) {
             //System.out.println("A"+r.AID+";"+(r.SEQ-1)+"的R包为空");
-            //myproject.D("p","A"+r.AID+";"+(r.SEQ-1)+"的R包为空");
+            //Myproject.D("p","A"+r.AID+";"+(r.SEQ-1)+"的R包为空");
             //System.out.println("R包丢包");
         }
     }
@@ -54,38 +54,38 @@ public class DitalThread implements Runnable {
 			/*P包的操作：直接存储->判断是不是该HID该seq下的第一个来的->若不是没你啥事了->若是则处理*/
     public void Pdeal(byte[] buf) {
         P p = new P(buf);
-        myproject.D("p", "p,seq" + p.SEQ + "aid," + p.AID);
+        Myproject.D("p", "p,seq" + p.SEQ + "aid," + p.AID);
 //		System.out.println("P"+"p,seq"+p.SEQ+"aid"+p.AID+"cr"+p.CR);
         int num = p.AID - 1;
         //aid-1变成数组序号；
 
 		/*判断是不是第一个到的，如果是则设置延时函数*/
-        myproject.pfirst[p.HID][p.SEQ]++;
+        Myproject.pfirst[p.HID][p.SEQ]++;
 
-        myproject.ps[p.HID][num].add(p);
-        if (myproject.ps[p.HID][num].size() > 4) {
-            myproject.ps[p.HID][num].remove(0);
+        Myproject.ps[p.HID][num].add(p);
+        if (Myproject.ps[p.HID][num].size() > 4) {
+            Myproject.ps[p.HID][num].remove(0);
         }
 
         {
-//            if (!myproject.H2C[p.HID].equals(p.CID)) {
-//                myproject.H2C[p.HID] = p.CID;
+//            if (!Myproject.H2C[p.HID].equals(p.CID)) {
+//                Myproject.H2C[p.HID] = p.CID;
 //                HC.sqlSet(p.HID, p.CID);
 //            }
         }
         //System.out.println(p.AID+":"+p.SEQ);
 
-        //myproject.D("p", "p,seq"+p.SEQ+"aid"+p.AID+"cr"+p.CR);
-        //if(myproject.pfirst[p.HID][p.SEQ]==3)
+        //Myproject.D("p", "p,seq"+p.SEQ+"aid"+p.AID+"cr"+p.CR);
+        //if(Myproject.pfirst[p.HID][p.SEQ]==3)
         //System.out.println("3个"+p.SEQ);
-        if (myproject.pfirst[p.HID][p.SEQ] == 1) {
+        if (Myproject.pfirst[p.HID][p.SEQ] == 1) {
             for (int i = 50; i < 100; i++) {
-                myproject.pfirst[p.HID][p.SEQ - i >= 0 ? p.SEQ - i : 256 + p.SEQ - i] = 0;
+                Myproject.pfirst[p.HID][p.SEQ - i >= 0 ? p.SEQ - i : 256 + p.SEQ - i] = 0;
             }
             try {
                 Thread.sleep(200);
-                if (myproject.pfirst[p.HID][p.SEQ] >= 4) {
-                    myproject.D("d", "p;h" + p.HID + "seq" + p.SEQ + "包够仨");
+                if (Myproject.pfirst[p.HID][p.SEQ] >= 4) {
+                    Myproject.D("d", "p;h" + p.HID + "seq" + p.SEQ + "包够仨");
                     //try
                     {
                         int[] r2 = Find2R(4);//寻找4个节点共同的R包
@@ -93,8 +93,8 @@ public class DitalThread implements Runnable {
                         Map<Integer, Double> Tampmap = new HashMap<>();//这个变量为时间戳映射
                         for (P itemp : PcheckBack(p)) //Pchekback是遍历这个数组new CopyOnWriteArrayList[10][4]，能得到四组数据
                         {
-                            R rone = myproject.rs[itemp.AID - 1].stream().filter(y -> y.SEQ == r2[0]).findFirst().get();
-                            R rtwo = myproject.rs[itemp.AID - 1].stream().filter(y -> y.SEQ == r2[1]).findFirst().get();
+                            R rone = Myproject.rs[itemp.AID - 1].stream().filter(y -> y.SEQ == r2[0]).findFirst().get();
+                            R rtwo = Myproject.rs[itemp.AID - 1].stream().filter(y -> y.SEQ == r2[1]).findFirst().get();
                             if (!rone.FLAG || !rtwo.FLAG) System.out.println("未检验错误");
                             //System.out.println("check;"+(rone.CS-rtwo.CS)+";");
                             //if(itemp.CR-rone.CR<0)System.out.println("yes");
@@ -139,8 +139,8 @@ public class DitalThread implements Runnable {
                     }
 
                 } else {
-                    myproject.D("d", "p" + p.SEQ + "不够三个");
-                    //System.out.println("p不足3个"+myproject.pfirst[p.HID][p.SEQ]+"seq"+p.SEQ+"num:"+myproject.testb++);
+                    Myproject.D("d", "p" + p.SEQ + "不够三个");
+                    //System.out.println("p不足3个"+Myproject.pfirst[p.HID][p.SEQ]+"seq"+p.SEQ+"num:"+Myproject.testb++);
                     try {
                         if (SendData.data[p.HID].size() > 3)
                             SendData.data[p.HID].remove(0);
@@ -161,9 +161,9 @@ public class DitalThread implements Runnable {
     /* 找出该HID该SEQ 不同AID的所有P包(即上面提供的个数的包都找出) */
     public ArrayList<P> PcheckBack(P p) {
         ArrayList<P> arrp = new ArrayList<P>();
-        for (int i = 0; i < myproject.ps.length; i++) {
+        for (int i = 0; i < Myproject.ps.length; i++) {
             try {
-                P varp = myproject.ps[p.HID][i].stream().filter((s) -> (s.SEQ == p.SEQ)).findFirst().get();
+                P varp = Myproject.ps[p.HID][i].stream().filter((s) -> (s.SEQ == p.SEQ)).findFirst().get();
                 arrp.add(varp);
             } catch (Exception e) {
             }
@@ -176,7 +176,7 @@ public class DitalThread implements Runnable {
 							/* 找出AID为num+1的flag=true的所有R包 的seq */
     public ArrayList<Integer> FindR(int num) {
         ArrayList<Integer> seqs = new ArrayList<Integer>();
-        myproject.rs[num].stream().filter((x) -> (x.FLAG)).distinct().forEach((x) -> {
+        Myproject.rs[num].stream().filter((x) -> (x.FLAG)).distinct().forEach((x) -> {
             seqs.add(x.SEQ);
         });
         return seqs;
@@ -189,7 +189,7 @@ public class DitalThread implements Runnable {
         ArrayList<Integer> s = new ArrayList<>();
         ArrayList<Integer> sq = new ArrayList<>();
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
-        for (int i = 0; i < myproject.ps[0].length; i++) {
+        for (int i = 0; i < Myproject.ps[0].length; i++) {
             FindR(i).forEach(x -> sq.add(x));
         }
         sq.stream().distinct().forEach(x -> {

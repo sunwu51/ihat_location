@@ -11,9 +11,9 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
-public class myproject {
+public class Myproject {
     public static CopyOnWriteArrayList<R>[] rs;
-    public static position[] preres;
+    public static Position[] preres;
     public static CopyOnWriteArrayList<P>[][] ps;
     public static int[][] pfirst;
     public static int testa, testb;
@@ -28,7 +28,7 @@ public class myproject {
     public static boolean debuginfo;
     public static boolean clacinfo;
 
-    public myproject() throws IOException {
+    public Myproject() throws IOException {
     }
 
     public static void D(String type, Object o) {
@@ -82,14 +82,14 @@ public class myproject {
             rs[i] = new CopyOnWriteArrayList<R>();
         }
         pfirst = new int[10][256];
-        preres = new position[10];
+        preres = new Position[10];
 
 //        H2C = new String[10];
 //		for (int i=0;i<H2C.length;i++) {
 //			H2C[i]="";
 //		}
-        for (position p : preres) {
-            p = new position(0, 0);
+        for (Position p : preres) {
+            p = new Position(0, 0);
         }
 
         if (!Init.SysInit()) {

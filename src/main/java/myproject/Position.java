@@ -1,9 +1,9 @@
 package myproject;
 
-public class position {
+public class Position {
     public double x, y;
 
-    public position(double x, double y) {
+    public Position(double x, double y) {
         this.x = x;
         this.y = y;
     }

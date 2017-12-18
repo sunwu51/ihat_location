@@ -16,7 +16,7 @@ public class DealThread implements Runnable {
                 int len = s.getInputStream().read(buf);
                 if (len < 0)
                     break;
-                //myproject.D("p", "包长度"+len);
+                //Myproject.D("p", "包长度"+len);
                 //System.out.println(len);
 
                 new Thread(new Runnable() {
@@ -34,13 +34,13 @@ public class DealThread implements Runnable {
                                         };
                                 new Thread(new DitalThread(subbuf)).start();
                             } catch (Exception e) {
-                                myproject.D("p", "接收数组长度错误");
+                                Myproject.D("p", "接收数组长度错误");
                             }
                         }
                     }
                 }).start();
             } catch (Exception e) {
-                myproject.D("d", "socket异常,已断开");
+                Myproject.D("d", "socket异常,已断开");
                 break;
             }
         }

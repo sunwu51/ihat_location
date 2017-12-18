@@ -23,7 +23,7 @@ public class SendData {
                             if (!sendable(hiddata)) {
                                 continue;
                             }
-                            myproject.mqttClient.publish(Init.mqtttopic, new MqttMessage(new Gson().toJson(GetAve(hiddata)).getBytes()));
+                            Myproject.mqttClient.publish(Init.mqtttopic, new MqttMessage(new Gson().toJson(GetAve(hiddata)).getBytes()));
                             hiddata.remove(hiddata.size() - 1);
                             hiddata.add(GetAve(hiddata));
                             //System.out.println(hiddata.size());
