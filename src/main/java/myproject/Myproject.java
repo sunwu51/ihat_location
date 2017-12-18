@@ -6,6 +6,8 @@ import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.CopyOnWriteArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
@@ -27,6 +29,8 @@ public class Myproject {
                                         /*封装打印方法和宏开关便于调试*/
     public static boolean debuginfo;
     public static boolean clacinfo;
+
+    public static ExecutorService exec = Executors.newCachedThreadPool();
 
     public Myproject() throws IOException {
     }
@@ -110,9 +114,11 @@ public class Myproject {
         SendData.Send();
         ServerSocket ss = new ServerSocket(Init.port);
         System.out.println("Tcpserver 启动，端口："+Init.port);
+
         while (true) {
             Socket s = ss.accept();
-            new Thread(new DealThread(s)).start();
+           //new Thread(new DealThread(s)).start();
+            exec.execute(new DealThread(s));
         }
     }
 }

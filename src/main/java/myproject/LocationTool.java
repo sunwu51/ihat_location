@@ -135,28 +135,28 @@ public class LocationTool {
 //    	   location1= GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1],distance_AB,distance_AC, Myproject.preres[hid].x, Myproject.preres[hid].y );
 //       }
 //       catch(Exception e){}
-        location1 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 2, 1);
+        location1 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 2, 1);
         //濡傛灉鍑虹幇杩唬涓嶆敹鏁涚殑鐜拌薄锛屽垯鑰冭檻鏇存崲璞￠檺
         if (Double.isNaN(location1[0]) || Double.isNaN(location1[1])) {
-            location1 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 2, 1);
+            location1 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 2, 1);
         }
         if (Double.isNaN(location1[0]) || Double.isNaN(location1[1])) {
-            location1 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 4, 1);
+            location1 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 4, 1);
         }
         if (Double.isNaN(location1[0]) || Double.isNaN(location1[1])) {
-            location1 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 4, 3);
+            location1 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 4, 3);
         }
         if (Double.isNaN(location1[0]) || Double.isNaN(location1[1])) {
-            location1 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 6, 3);
+            location1 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 6, 3);
         }
         if (Double.isNaN(location1[0]) || Double.isNaN(location1[1])) {
-            location1 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, -2, 1);
+            location1 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, -2, 1);
         }
         if (Double.isNaN(location1[0]) || Double.isNaN(location1[1])) {
-            location1 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, -2, -1);
+            location1 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, -2, -1);
         }
         if (Double.isNaN(location1[0]) || Double.isNaN(location1[1])) {
-            location1 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 2, -1);
+            location1 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], C[0], C[1], distance_AB, distance_AC, 2, -1);
         }
         if (Double.isNaN(location1[0]) || Double.isNaN(location1[1])) {
             location1[0] = 0;
@@ -167,28 +167,28 @@ public class LocationTool {
 //     	   location2= GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1],distance_AB,distance_AD, Myproject.preres[hid].x, Myproject.preres[hid].y );
 //        }
 //        catch(Exception e){}
-        location2 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 2, 1);
+        location2 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 2, 1);
         //濡傛灉鍑虹幇杩唬涓嶆敹鏁涚殑鐜拌薄锛屽垯鑰冭檻鏇存崲璞￠檺
         if (Double.isNaN(location2[0]) || Double.isNaN(location2[1])) {
-            location2 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 2, 1);
+            location2 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 2, 1);
         }
         if (Double.isNaN(location2[0]) || Double.isNaN(location2[1])) {
-            location2 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 4, 1);
+            location2 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 4, 1);
         }
         if (Double.isNaN(location2[0]) || Double.isNaN(location2[1])) {
-            location2 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 4, 3);
+            location2 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 4, 3);
         }
         if (Double.isNaN(location2[0]) || Double.isNaN(location2[1])) {
-            location2 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 6, 3);
+            location2 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 6, 3);
         }
         if (Double.isNaN(location2[0]) || Double.isNaN(location2[1])) {
-            location2 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, -2, 1);
+            location2 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, -2, 1);
         }
         if (Double.isNaN(location2[0]) || Double.isNaN(location2[1])) {
-            location2 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, -2, -1);
+            location2 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, -2, -1);
         }
         if (Double.isNaN(location2[0]) || Double.isNaN(location2[1])) {
-            location2 = Myproject.GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 2, -1);
+            location2 = GetTheLocation.getPos(A[0], A[1], B[0], B[1], D[0], D[1], distance_AB, distance_AD, 2, -1);
         }
         if (Double.isNaN(location2[0]) || Double.isNaN(location2[1])) {
             location2[0] = 0;
@@ -199,28 +199,28 @@ public class LocationTool {
 //      	   location3= GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1],distance_AC,distance_AD, Myproject.preres[hid].x, Myproject.preres[hid].y );
 //         }
 //         catch(Exception e){}
-        location3 = Myproject.GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 2, 1);
+        location3 = GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 2, 1);
         //濡傛灉鍑虹幇杩唬涓嶆敹鏁涚殑鐜拌薄锛屽垯鑰冭檻鏇存崲璞￠檺
         if (Double.isNaN(location3[0]) || Double.isNaN(location3[1])) {
-            location3 = Myproject.GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 2, 1);
+            location3 = GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 2, 1);
         }
         if (Double.isNaN(location3[0]) || Double.isNaN(location3[1])) {
-            location3 = Myproject.GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 4, 1);
+            location3 = GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 4, 1);
         }
         if (Double.isNaN(location3[0]) || Double.isNaN(location3[1])) {
-            location3 = Myproject.GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 4, 3);
+            location3 = GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 4, 3);
         }
         if (Double.isNaN(location3[0]) || Double.isNaN(location3[1])) {
-            location3 = Myproject.GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 6, 3);
+            location3 = GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 6, 3);
         }
         if (Double.isNaN(location3[0]) || Double.isNaN(location3[1])) {
-            location3 = Myproject.GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, -2, 1);
+            location3 = GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, -2, 1);
         }
         if (Double.isNaN(location3[0]) || Double.isNaN(location3[1])) {
-            location3 = Myproject.GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, -2, -1);
+            location3 = GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, -2, -1);
         }
         if (Double.isNaN(location3[0]) || Double.isNaN(location3[1])) {
-            location3 = Myproject.GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 2, -1);
+            location3 = GetTheLocation.getPos(A[0], A[1], C[0], C[1], D[0], D[1], distance_AC, distance_AD, 2, -1);
         }
         if (Double.isNaN(location3[0]) || Double.isNaN(location3[1])) {
             location3[0] = 0;
@@ -231,29 +231,29 @@ public class LocationTool {
 //       	   location4= GetTheLocation.getPos(B[0], B[1], C[0], C[1],D[0], D[1],distance_BC,distance_BD, Myproject.preres[hid].x, Myproject.preres[hid].y );
 //          }
 //          catch(Exception e){}
-        location4 = Myproject.GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 2, 1);
+        location4 = GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 2, 1);
 
         //濡傛灉鍑虹幇杩唬涓嶆敹鏁涚殑鐜拌薄锛屽垯鑰冭檻鏇存崲璞￠檺
         if (Double.isNaN(location4[0]) || Double.isNaN(location4[1])) {
-            location4 = Myproject.GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 2, 1);
+            location4 = GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 2, 1);
         }
         if (Double.isNaN(location4[0]) || Double.isNaN(location4[1])) {
-            location4 = Myproject.GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 4, 1);
+            location4 = GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 4, 1);
         }
         if (Double.isNaN(location4[0]) || Double.isNaN(location4[1])) {
-            location4 = Myproject.GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 4, 3);
+            location4 = GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 4, 3);
         }
         if (Double.isNaN(location4[0]) || Double.isNaN(location4[1])) {
-            location4 = Myproject.GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 6, 3);
+            location4 = GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 6, 3);
         }
         if (Double.isNaN(location4[0]) || Double.isNaN(location4[1])) {
-            location4 = Myproject.GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, -2, 1);
+            location4 = GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, -2, 1);
         }
         if (Double.isNaN(location4[0]) || Double.isNaN(location4[1])) {
-            location4 = Myproject.GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, -2, -1);
+            location4 = GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, -2, -1);
         }
         if (Double.isNaN(location4[0]) || Double.isNaN(location4[1])) {
-            location4 = Myproject.GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 2, -1);
+            location4 = GetTheLocation.getPos(B[0], B[1], C[0], C[1], D[0], D[1], distance_BC, distance_BD, 2, -1);
         }
         if (Double.isNaN(location4[0]) || Double.isNaN(location4[1])) {
             location4[0] = 0;

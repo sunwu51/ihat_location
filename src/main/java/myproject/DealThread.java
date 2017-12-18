@@ -19,9 +19,7 @@ public class DealThread implements Runnable {
                 //Myproject.D("p", "包长度"+len);
                 //System.out.println(len);
 
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
+                Myproject.exec.execute(()-> {
                         // TODO Auto-generated method stub
                         int i = 0;
                         while ((len / 16) > i) {
@@ -38,7 +36,7 @@ public class DealThread implements Runnable {
                             }
                         }
                     }
-                }).start();
+                    );
             } catch (Exception e) {
                 Myproject.D("d", "socket异常,已断开");
                 break;
